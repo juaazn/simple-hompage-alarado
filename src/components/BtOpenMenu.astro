@@ -1,0 +1,22 @@
+---
+import { Image } from 'astro:assets';
+import hamburgerMenu from '../images/menu-hamburger.svg'
+---
+
+<button class="nav__opendialog">
+  <Image src={hamburgerMenu} alt='Icon hamburge menu open' class='nav__openmenu'/>
+</button>
+
+<style>
+  .nav__opendialog {
+    width: 2rem;
+    height: 1.5rem;
+    background: none;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+  }
+  .nav__openmenu {
+    fill: var(--secondary-color);
+  }
+</style>

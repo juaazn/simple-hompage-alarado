@@ -1,19 +1,15 @@
 ---
-import { Image } from 'astro:assets';
-import iconAlarado  from '../images/alarado-icon-homepage.svg'
-import hamburgerMenu from '../images/menu-hamburger.svg'
-import closeMenu from '../images/close-menu.svg'
+import LogoAlarado from './LogoAlarado.astro';
+import BtOpenMenu from './BtOpenMenu.astro';
+import BtCloseMenu from './BtCloseMenu.astro';
+import DarkAndLightMode from './DarkAndLightMode.astro';
 ---
 
 <header class="nav">
-  <figure class="nav__containerimg">
-    <Image src={iconAlarado} alt='Icon Alarado' class="nav__img" />
-  </figure>
+  <LogoAlarado />
   <dialog class="nav__modal">
-    <div class="nav__modalcontainer">
-      <button class="nav__closemenu">
-        <Image src={closeMenu} alt='Icon close menu' class='nav__closemenu__img'/>
-      </button>
+    <nav class="nav__modalcontainer">
+      <BtCloseMenu />
       <nav class="nav__navegation">
         <ul class="nav__navegation__ul">
           <li><a class="nav__navegation__a" href="#">About us</a></li>
@@ -22,61 +18,41 @@ import closeMenu from '../images/close-menu.svg'
           <li><a class="nav__navegation__a" href="#">Contact</a></li>
         </ul>
       </nav>
-    </div>
+      <DarkAndLightMode />
+    </nav>
   </dialog>
-  <button class="nav__opendialog">
-    <Image src={hamburgerMenu} alt='Icon hamburge menu open' class='nav__openmenu'/>
-  </button>
+  <BtOpenMenu />
 </header>
-
-<script>
-  const openDialog = document.querySelector('.nav__opendialog')
-  const modalDialog = document.querySelector('.nav__modal')
-  const closeModal = document.querySelector('.nav__closemenu')
-
-  openDialog.addEventListener('click', () => {
-    modalDialog.show();
-  })
-  closeModal.addEventListener('click', () => {
-    modalDialog.close()
-  })
-</script>
 
 <style>
   .nav {
-    width: 100%;
-    height: 6rem;
+    width: 100svw;
+    height: 5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
-  }
-  .nav__containerimg{
-    width: 50%;
-    height: auto;
-    margin: 0;
-  }
-  .nav__img {
-    max-width: 100%;
-    aspect-ratio: auto;
-  }
-  .nav__modal{
-    position: absolute;
+    box-sizing: border-box;
+    padding: 0 1.25rem;
     top: 0;
-    right: 0;
-    width: 100vw;
-    height: 100vh;
-    background: var(--color-white1);
+    bottom: 0;
+  }
+  .nav__modal {
+    width: 100svw;
+    height: 100svh;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-white1);
     border: none;
+    bottom: 0;
   }
   .nav__modalcontainer {
     width: 100%;
-    height: 100%;
-    padding: 1.5rem;
+    min-height: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    gap: 3rem;
+    gap: 2rem;
+    padding: 1rem;
     box-sizing: border-box;
   }
   .nav__modalcontainer .nav__navegation {
@@ -105,28 +81,5 @@ import closeMenu from '../images/close-menu.svg'
   .nav__modalcontainer .nav__navegation__a:hover {
     color: var(--color-darkpastelblue);
     font-size: 2.6em;
-  }
-  .nav__opendialog {
-    background: none;
-    border: none;
-    width: 3rem;
-    height: 2.5rem;
-    cursor: pointer;
-  }
-  .nav__openmenu {
-    max-width: 100%;
-    height: auto;
-  }
-  .nav__closemenu {
-    width: 1.8rem;
-    height: 1.2rem;
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-  .nav__closemenu__img {
-    max-width: 100%;
-    height: auto;
-    aspect-ratio: auto;
   }
 </style>

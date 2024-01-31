@@ -1,0 +1,23 @@
+---
+import { Image } from 'astro:assets'
+import ligth from '../images/Sun_fill.svg'
+import moon from '../images/Moon_fill.svg'
+---
+
+<div class="nav__container__darklightmode">
+  <button class="nav__btdarklightmode ligth"><Image src={ligth} alt='Mode ligth' /></button>
+  <button class="nav__btdarklightmode moom"><Image src={moon} alt='Mode ligth' /></button>
+</div>
+
+<style>
+  .nav__container__darklightmode {
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .nav__darklightmode {
+    margin: 0 auto;
+  }
+</style>

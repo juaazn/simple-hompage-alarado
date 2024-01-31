@@ -1,8 +1,34 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import NavegationHeader from '../components/NavegationHeader.astro';
+import ImagaMainPage from '../components/ImagaMainPage.astro';
+import HomePageContentMain from '../components/HomePageContentMain.astro';
+import HomePageContentButtom from '../components/HomePageContentButtom.astro';
+import ProductAdvantages from '../components/ProductAdvantages.astro';
 ---
 
 <Layout>
-  <NavegationHeader />
+  <ImagaMainPage />
+  <main class="homepage__container">
+    <p class="homepage__slogan"><strong>😎  Simple way to communicate</strong></p>
+    <HomePageContentMain />
+    <HomePageContentButtom />
+    <ProductAdvantages />
+  </main>
 </Layout>
+
+<style>
+  .homepage__container {
+    width: 100vw;
+    height: auto;
+    box-sizing: border-box;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.50rem;
+    font-size: var(--font-size-body);
+  }
+  .homepage__slogan {
+    font-size: var(--font-size-base);
+  }
+</style>

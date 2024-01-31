@@ -1,0 +1,17 @@
+---
+import { Image } from 'astro:assets'
+import heroImageHomePage from '../images/hero-image-simple-homepage.webp'
+---
+<figure class='container-heroimagehomepage'>
+  <Image src={heroImageHomePage} alt='Hero image home page' class='heroimagehomepage'/>
+</figure>
+
+<style>
+  .container-heroimagehomepage {
+    margin: 0;
+  }
+  .heroimagehomepage {
+    box-sizing: border-box;
+    padding: 0 1.25rem;
+  }
+</style>
