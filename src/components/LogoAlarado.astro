@@ -1,0 +1,20 @@
+---
+import { Image } from 'astro:assets'
+import iconAlarado  from '../images/alarado-icon-homepage.svg'
+---
+
+<figure class="nav__containerimg">
+  <Image src={iconAlarado} alt='Icon Alarado' class="nav__img" />
+</figure>
+
+<style>
+  .nav__containerimg{
+    width: 50%;
+    height: auto;
+    margin: 0;
+  }
+  .nav__img {
+    max-width: 100%;
+    aspect-ratio: auto;
+  }
+</style>
