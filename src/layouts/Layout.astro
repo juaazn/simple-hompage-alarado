@@ -1,3 +1,7 @@
+---
+import NavegationHeader from '../components/NavegationHeader.astro';
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -12,29 +16,53 @@
 		<title>Alarado</title>
 	</head>
 	<body>
+    <NavegationHeader />  
 		<slot />
+    <script>
+      import '../scripts/interaction-menu'
+    </script>
 	</body>
 </html>
 <style is:global>
 	:root {
     --color-white1: #FAFAFA;
-    --color-white2: #F2F9FE;
+    --bg-home-page: #F2F9FE;
     --color-gray: #909193;
     --color-blue: #2A4DD0;
     --color-green: #4CA154;
     --color-darkpastelblue: #111729;
-    --color-darkcyanblue: #223344;
+    --secondary-color: #223344;
+    
+    --font-weight-bold: bold;
+    --font-size-title: 2.8rem;
+    --font-size-body: 1.125rem;
+    --font-size-buttom: 1rem;
+    --font-size-small: .75rem;
 	}
 	html {
 		font-family: 'Poppins', sans-serif;
 	}
 	body {
     margin: 0;
-    padding: 0 1.25rem;
+    padding: 0;
+    background-color: var(--bg-home-page);
   }
   a {
     text-decoration: none;
-    color: ini;
     display: block;
+  }
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: auto;
+  }
+  p {
+    margin: 0;
+    padding: 0;
+  }
+  figure {
+    margin: 0;
+    padding: 0;
   }
 </style>
