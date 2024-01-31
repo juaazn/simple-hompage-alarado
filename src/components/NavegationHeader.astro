@@ -5,63 +5,72 @@ import BtCloseMenu from './BtCloseMenu.astro';
 import DarkAndLightMode from './DarkAndLightMode.astro';
 ---
 
-<header class="nav">
+<header class="navigationofpage">
   <LogoAlarado />
-  <dialog class="nav__modal">
-    <nav class="nav__modalcontainer">
-      <BtCloseMenu />
-      <nav class="nav__navegation">
-        <ul class="nav__navegation__ul">
-          <li><a class="nav__navegation__a" href="#">About us</a></li>
-          <li><a class="nav__navegation__a" href="#">Product</a></li>
-          <li><a class="nav__navegation__a" href="#">Resource</a></li>
-          <li><a class="nav__navegation__a" href="#">Contact</a></li>
-        </ul>
-      </nav>
-      <DarkAndLightMode />
-    </nav>
+  <dialog class="modal">
+    <section class="modal__container">
+      <div class="modal__container--flexend">
+        <BtCloseMenu />
+        <nav class="nav__navegation">
+          <ul class="nav__navegation__ul">
+            <li><a class="nav__navegation__a" href="#">About us</a></li>
+            <li><a class="nav__navegation__a" href="#">Product</a></li>
+            <li><a class="nav__navegation__a" href="#">Resource</a></li>
+            <li><a class="nav__navegation__a" href="#">Contact</a></li>
+          </ul>
+        </nav>
+        <DarkAndLightMode />
+      </div>
+    </section>
   </dialog>
   <BtOpenMenu />
 </header>
 
 <style>
-  .nav {
+  .navigationofpage {
     width: 100svw;
-    height: 5rem;
+    min-height: 5rem;
+    max-height: max-content;
     display: flex;
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
     padding: 0 1.25rem;
-    top: 0;
-    bottom: 0;
   }
-  .nav__modal {
+  .modal {
+    position: fixed;
+    inset: 0;
     width: 100svw;
     height: 100svh;
+    border: none;
     margin: 0;
     padding: 0;
-    background-color: var(--color-white1);
-    border: none;
-    bottom: 0;
+    background: none;
   }
-  .nav__modalcontainer {
+  .modal__container {
     width: 100%;
-    min-height: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: end;
+  }
+  .modal__container--flexend {
+    width: 70%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     gap: 2rem;
-    padding: 1rem;
+    padding: 2rem;
     box-sizing: border-box;
+    background-color: var(--color-white1);
   }
-  .nav__modalcontainer .nav__navegation {
+  .nav__navegation {
     width: 100%;
     height: auto;
     display: flex;
     justify-content: center;
   }
-  .nav__modalcontainer .nav__navegation__ul {
+  .nav__navegation__ul {
     width: 100%;
     height: auto;
     margin: 0;
@@ -72,13 +81,14 @@ import DarkAndLightMode from './DarkAndLightMode.astro';
     align-items: center;
     gap: 1.8rem;
   }
-  .nav__modalcontainer .nav__navegation__a {
+  .nav__navegation__a {
     color: var(--color-gray);
-    font-size: 2.5em;
+    font-size: 2rem;
     font-weight: 600;
     transition: color, font-size 1s;
+    text-wrap: balance;
   }
-  .nav__modalcontainer .nav__navegation__a:hover {
+  .nav__navegation__a:hover {
     color: var(--color-darkpastelblue);
     font-size: 2.6em;
   }
