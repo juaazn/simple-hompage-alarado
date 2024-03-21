@@ -1,23 +1,53 @@
 ---
-import { Image } from 'astro:assets'
-import ligth from '../images/Sun_fill.svg'
-import moon from '../images/Moon_fill.svg'
+import ConteinerModeDark from './ConteinerModeDark.astro'
+import IconLight from './IconLight.astro'
+// import moon from '../images/moon-fill-light.svg'
 ---
+<ConteinerModeDark>
+  <button type="button" role="switch" aria-checked="false" class="switch">
+    <!-- <figure class="siwcth__indicator"></figure> -->
+      <IconLight>
+  </button>
+</ConteinerModeDark>
 
-<div class="nav__container__darklightmode">
-  <button class="nav__btdarklightmode ligth"><Image src={ligth} alt='Mode ligth' /></button>
-  <button class="nav__btdarklightmode moom"><Image src={moon} alt='Mode ligth' /></button>
-</div>
+<script>
+  const toggleSwitch = document.querySelector('.switch')
+
+  toggleSwitch.addEventListener('click', () => {
+    
+    if (document.body.classList.contains('mode_dark')) {
+      document.body.classList.remove('mode_dark')
+      toggleSwitch.setAttribute('aria-checked', 'false')
+    } else {
+      document.body.classList.add('mode_dark')
+      toggleSwitch.setAttribute('aria-checked', 'true')
+    }
+  })
+</script>
 
 <style>
-  .nav__container__darklightmode {
-    width: 100%;
-    height: 4rem;
+  .switch {
+    background: none;
+    border: none;
+    width: 5.5rem;
+    height: 2.5rem;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    border-radius: 2rem;
+    box-shadow: var(--inset-buttom-mode-dark);
+    position: relative;
+  }
+  .siwcth__indicator {
+    position: absolute;
+    width: 2.3rem;
+    min-height: 2.3rem;
+    margin: .250rem 0 .2rem .2rem;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  .nav__darklightmode {
-    margin: 0 auto;
+    border-radius: 50%;
+    background-color: var(--color-white1);
+    box-shadow: 0 0 1rem .1rem var(--bg-home-page);
   }
 </style>

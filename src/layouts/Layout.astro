@@ -6,6 +6,7 @@ import NavegationHeader from '../components/NavegationHeader.astro';
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
+    <meta name="color-scheme" content="dark light">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -19,7 +20,7 @@ import NavegationHeader from '../components/NavegationHeader.astro';
     <NavegationHeader />  
 		<slot />
     <script>
-      import '../scripts/interaction-menu'
+      import '../scripts/interaction-menu.js'
     </script>
 	</body>
 </html>
@@ -33,12 +34,18 @@ import NavegationHeader from '../components/NavegationHeader.astro';
     --color-darkpastelblue: #111729;
     --secondary-color: #223344;
     
+    --inset-buttom-mode-dark: inset 0 8rem 4.3rem rgba(0, 0, 0, .1), inset 0 .5rem .5rem rgba(0, 0, 0, .1), inset 0 -.025rem .5rem rgba(0, 0, 0, .1);
+
     --font-weight-bold: bold;
     --font-size-title: 2.8rem;
     --font-size-body: 1.125rem;
     --font-size-buttom: 1rem;
     --font-size-small: .75rem;
 	}
+  .mode_dark {
+    --bg-home-page: #111729;
+    --secondary-color: #FAFAFA;
+  }
 	html {
 		font-family: 'Poppins', sans-serif;
 	}
